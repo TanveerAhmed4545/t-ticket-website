@@ -148,7 +148,7 @@
        <div class="flex bg-[#FFFFFF] rounded-3xl flex-col md:flex-row">
            <!-- green area  -->
            <div class="p-8 grow">
-            <div class="flex justify-between">
+            <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-between">
                 <div class="flex gap-3">
                     <img class="w-auto" src="./images/bus-logo.png">
                     <div>
@@ -210,7 +210,7 @@
 
         
             
-            <div class="flex inter-fonts gap-5 ">
+            <div class="flex inter-fonts gap-2 md:gap-5 ">
 
                 <div class="grid grid-cols-1 items-center space-y-5">
                   <p >A</p>
@@ -227,8 +227,8 @@
                   
                 </div>
                 
-                <div class="grid grid-cols-2 gap-16">
-                    <div class="grid grid-cols-2 gap-8">
+                <div class="grid grid-cols-2 gap-4 md:gap-16">
+                    <div class="grid grid-cols-2 gap-4 md:gap-8">
 
                         <button id="A1" class="btn items bg-[#F7F8F8] px-10">A1</button>
                         <button id="A2" class="btn items bg-[#F7F8F8] px-10">A2</button>
@@ -252,7 +252,7 @@
                         <button id="J2" class="btn items bg-[#F7F8F8] px-10">J2</button>
                         
                     </div>
-                    <div class="grid grid-cols-2 gap-8">
+                    <div class="grid grid-cols-2 gap-4 md:gap-8">
                         <button id="A3" class="btn items bg-[#F7F8F8] px-10">A3</button>
                         <button id="A4" class="btn items bg-[#F7F8F8] px-10">A4</button>
                         <button id="B3" class="btn items bg-[#F7F8F8] px-10">B3</button>
@@ -325,7 +325,11 @@
                     <button id="couponBtn" class="bg-[#1DD100] text-white font-semibold py-2 px-4 rounded-lg">Apply</button>
                   </label>
               </div>
-              <div class="text-[#030712] font-medium flex justify-between">
+              <div id="discount-area" class="text-[#030712] font-medium flex justify-between hidden pt-4">
+                <p  >Discount Amount</p>
+                <p>BDT <span id="discountAmount"></span></p>
+              </div>
+              <div class="text-[#030712] font-medium flex justify-between pt-3">
                 <p  >Grand Price</p>
                 <p>BDT <span id="grandPrice"></span></p>
               </div>
@@ -394,7 +398,7 @@
                       <form method="dialog"> 
                         <!-- if there is a button in form, it will close the modal -->
                          <div class="flex ">
-                          <button class="btn btn-wide rounded-3xl bg-[#27AE60] text-white">Continue</button>
+                          <button id="continue-Btn" class="btn btn-wide rounded-3xl bg-[#27AE60] text-white">Continue</button>
                           
                         </div>
                       </form>
