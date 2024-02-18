@@ -1,8 +1,7 @@
 console.log("connected");
 
 const items = document.getElementsByClassName("items");
-const phNumber =document.getElementById('phNumber');
-const nextBtn = document.getElementById('nextBtn');
+
 // console.log(items);
 
 let seatCount = 0;
@@ -102,19 +101,32 @@ document.getElementById("couponBtn").addEventListener("click", function () {
 });
 
 
+const phNumber =document.getElementById('phNumber');
+const nextBtn = document.getElementById('nextBtn');
+// phNumber.addEventListener('input',function(){
+   
+   
+//     // console.log(nextBtn);
+//     // const numbers = e.value;
+//     const numbers = phNumber.value;
+//     console.log(numbers.length);
+    
+//         if(numbers.length > 0 && seatCount > 0){
+//             nextBtn.disabled = false;
+//         }else{
+//             nextBtn.disabled = true;
+//         }
+    
+// });
 
-phNumber.addEventListener('input',function(e){
-      
-    // const numbers = e.value;
+nextBtn.disabled = true;
+phNumber.addEventListener('input', function () {
     const numbers = phNumber.value;
-    console.log(numbers);
-    if(numbers.length > 0 && seatCount > 0){
-        nextBtn.disabled = false;
-    }else{
-        nextBtn.disabled = true;
-    }
-});
+    const isValidInput = numbers.length > 0;
+    const isValidSeatCount = seatCount > 0;
 
+    nextBtn.disabled = !(isValidInput && isValidSeatCount);
+});
 
 
 
