@@ -1,7 +1,8 @@
 console.log("connected");
 
 const items = document.getElementsByClassName("items");
-const phNumber =document.getAnimations('phNumber');
+const phNumber =document.getElementById('phNumber');
+const nextBtn = document.getElementById('nextBtn');
 // console.log(items);
 
 let seatCount = 0;
@@ -14,11 +15,13 @@ const ticketPriceNumber = parseInt(ticketPrice.innerText);
 
 for (const item of items) {
   item.addEventListener("click", function () {
-    console.log(item.innerText);
+    // console.log(item.innerText);
     item.style.backgroundColor = "#1DD100";
     item.style.color = 'white';
     seatCount++;
     seatLeftCount--;
+
+    
 
     const seats = document.getElementById("seats");
     // console.log(seats);
@@ -76,7 +79,11 @@ document.getElementById("couponBtn").addEventListener("click", function () {
     grandPrice = grandPrice - discountAmount;
     grandAmount.innerText = grandPrice;
 
+
+
     document.querySelector("#coupon-Input").value = "";
+     const anyCouponArea = document.querySelector("#anyCouponArea");
+     anyCouponArea.classList.add("hidden");
     document.querySelector("#coupon-Input").disabled = true;
   } else if ("NEW15" === couponCode) {
     const discountAmount = totalPrice * 0.15;
@@ -85,11 +92,29 @@ document.getElementById("couponBtn").addEventListener("click", function () {
     grandAmount.innerText = grandPrice;
 
     document.querySelector("#coupon-Input").value = "";
+    const anyCouponArea = document.querySelector("#anyCouponArea");
+     anyCouponArea.classList.add("hidden");
     document.querySelector("#coupon-Input").disabled = true;
   } else {
     alert("Invalid");
     document.querySelector("#coupon-Input").value = "";
   }
 });
+
+
+
+phNumber.addEventListener('input',function(e){
+      
+    // const numbers = e.value;
+    const numbers = phNumber.value;
+    console.log(numbers);
+    if(numbers.length > 0 && seatCount > 0){
+        nextBtn.disabled = false;
+    }else{
+        nextBtn.disabled = true;
+    }
+});
+
+
 
 
