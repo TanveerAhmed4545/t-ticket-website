@@ -36,7 +36,7 @@ for (const item of items) {
     const tr1 = document.createElement("tr");
     tr1.innerHTML = `
         <td>${item.innerText}</td>
-        <td>economy</td>
+        <td>Economy</td>
         <td>${ticketPriceNumber}</td>
          `;
     tableBody.appendChild(tr1);
