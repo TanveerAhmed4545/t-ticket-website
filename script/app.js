@@ -78,11 +78,12 @@ document.getElementById("couponBtn").addEventListener("click", function () {
   // console.log('click')
   const couponElement = document.querySelector("#coupon-Input").value;
   //    console.log(couponElement);
-  const couponCode = couponElement.toUpperCase();
+  const couponCode = couponElement;
+  // const couponCode = couponElement.toUpperCase();
   //    console.log(couponCode);
 
 
-  if ("COUPLE 20" === couponCode) {
+  if ("Couple 20" === couponCode) {
     discountArea.classList.remove('hidden');
     const discountAmount = totalPrice * 0.2;
     discountAmountNumbers.innerText =discountAmount;
@@ -155,8 +156,10 @@ phNumber.addEventListener('input', function () {
 
 
 document.getElementById('continue-Btn').addEventListener('click',function(){
-  location.reload();
+  window.location.reload();
 });
+
+
 
 
 
